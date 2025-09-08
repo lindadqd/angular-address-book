@@ -25,4 +25,12 @@ export class ContactServiceService {
     this.currentId++
     this.contacts.push({...contact, id: this.currentId})
   }
+
+  public editContact(contact: Contact, id: number) {
+    console.log(contact)
+    console.log(id)
+    this.contacts = this.contacts.map(item => item.id === id ? contact : item)
+    console.log(this.contacts)
+  }
+ 
 }
